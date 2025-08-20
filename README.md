@@ -1,5 +1,8 @@
 # flutter_exo
 
+Maquette figma
+https://www.figma.com/design/eRnLIOMIaTfzXzJkbX0Hlk/Recipe-Sharing-app-UI-KIt--Community-?node-id=209-12&p=f&t=RXDeIC1GRFnpst0a-0
+
 A new Flutter project.
 
 ## Getting Started
