@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_exo/searchScreen.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -172,11 +173,24 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage("assets/avatar.png"),
-          radius: 20,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage("assets/avatar.png"),
+            radius: 20,
+          ),
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Searchscreen()),
+              );
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -302,6 +316,36 @@ class _HomescreenState extends State<Homescreen> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        currentIndex: 2,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Color(0xFF3FB4B1),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_outlined),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            label: "add",
+            icon: ElevatedButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+              style: ElevatedButton.styleFrom(shape: CircleBorder()),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_active_outlined),
+            label: "Notification",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Person"),
+        ],
       ),
     );
   }

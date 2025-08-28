@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_exo/iceCream.dart';
 import 'package:flutter_exo/welcomePage.dart';
 
 void main() {
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Recipes',
-      home: Welcomepage(),
+      home: Icecream(),
+
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF3FB4B1)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFFFA865)),
       ),
       debugShowCheckedModeBanner: false,
     );
